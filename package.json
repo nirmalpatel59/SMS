@@ -1,0 +1,23 @@
+{
+  "name": "school_management_system",
+  "version": "1.0.0",
+  "description": "School Management System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirmalpatel59/SMS.git"
+  },
+  "author": "Nirmal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nirmalpatel59/SMS/issues"
+  },
+  "homepage": "https://github.com/nirmalpatel59/SMS#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "xlsx": "^0.8.0"
+  }
+}
