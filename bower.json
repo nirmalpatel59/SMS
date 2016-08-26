@@ -1,0 +1,20 @@
+{
+  "name": "school_management_system",
+  "description": "School Management System",
+  "main": "index.js",
+  "authors": [
+    "Nirmal"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/nirmalpatel59/SMS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

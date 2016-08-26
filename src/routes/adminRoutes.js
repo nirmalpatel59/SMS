@@ -1,0 +1,36 @@
+var express = require("express");
+var adminRouter = express.Router();
+var list = [
+        { name: "nirmal",
+          sid: "Ab123456",
+          marks: "90",
+          per: "98" 
+        },
+        { name: "rajesh",
+          sid: "AC120099",
+          marks: "60",
+          per: "88" 
+        },
+        { name: "tejas",
+          sid: "LL123323",
+          marks: "78",
+          per: "90" 
+        },
+        { name: "pela",
+          sid: "papa",
+          marks: "50",
+          per: "68" 
+        }
+      ];
+adminRouter.route("/")
+  .get(function(req,res) {
+    res.render("admin",{
+      list: list
+    });
+  });
+adminRouter.route("/import")
+  .get(function(req,res) {
+    res.render("import");
+  });
+
+module.exports = adminRouter;

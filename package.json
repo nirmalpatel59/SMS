@@ -4,7 +4,8 @@
   "description": "School Management System",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,13 @@
   },
   "homepage": "https://github.com/nirmalpatel59/SMS#readme",
   "dependencies": {
+    "ejs": "^2.5.1",
     "express": "^4.14.0",
     "xlsx": "^0.8.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0",
+    "wiredep": "^4.0.0"
   }
 }
