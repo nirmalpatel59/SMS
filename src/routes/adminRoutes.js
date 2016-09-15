@@ -24,13 +24,17 @@ var list = [
       ];
 adminRouter.route("/")
   .get(function(req,res) {
-    res.render("admin",{
+    res.render("pages/admin",{
       list: list
     });
   });
 adminRouter.route("/import")
   .get(function(req,res) {
-    res.render("import");
+    res.render("pages/import");
+  });
+adminRouter.route("/addnew")
+  .get(function(req,res) {
+    res.render("pages/addnew");
   });
 
 module.exports = adminRouter;

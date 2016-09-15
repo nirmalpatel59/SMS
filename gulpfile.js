@@ -13,17 +13,20 @@ gulp.task("inject",function() {
     .pipe(gulp.dest("./src/views"))
 });
 
-gulp.task("serve",["inject"],function(){
+gulp.task("serve",function(){
   var options = {
     script : "index.js",
     delayTime: 1,
     env:{
       "PORT": 5000
     },
-    watch: js_files
+    ext: 'js html css ejs'
   }
   return nodemon(options)
     .on('restart',function(ev){
       console.log("restartihng the server....")      
     })
+});
+
+gulp.task("default",["serve","inject"], function() {
 });

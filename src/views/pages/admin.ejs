@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>School Management System</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <% include ../partials/header %>
+    <div class="container Premrg20">
+      <div class="row Premrg10">
+        <div class="col-lg-2 pull-right">
+          <input type="file" name="" value="click here to Import result"> 
+          <span><a href="/admin/import">click here to Import result</a></span>
+        </div>
+      </div>
+
+      <div class="row Premrg10">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Seat No.</th>
+              <th>Marks Obtained</th>
+              <th>Percentile</th>
+              <th><span class="glyphicon glyphicon-plus pointer" id="add_more_students">Add</span></th>
+            </tr>      
+          </thead>
+          <tbody>
+            <% for(var i=0; i<list.length; i++){%>
+              <tr>
+                <td><%=list[i].name%></td>
+                <td><%=list[i].sid%></td>
+                <td><%=list[i].marks%></td>
+                <td><%=list[i].per%></td>
+                <td>
+                  <span class="glyphicon glyphicon-edit pointer"></span>
+                  <span class="glyphicon glyphicon-trash pointer"></span>
+                </td>
+              </tr>
+            <%}%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--bower:js-->
+      <script src="/lib/jquery/dist/jquery.js"></script>
+      <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <script src="/js/add_students.js"></script>
+  </body>
+</html>
+
+
+
