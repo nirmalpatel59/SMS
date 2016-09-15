@@ -12,10 +12,13 @@
   <body>
     <% include ../partials/header %>
     <div class="container Premrg20">
-      <div class="row Premrg10">
-        <div class="col-lg-2 pull-right">
-          <input type="file" name="" value="click here to Import result"> 
-          <span><a href="/admin/import">click here to Import result</a></span>
+      <div class="row Premrg10 pull-right">
+        <div class="col-lg-5">
+          <!-- <span><a href="/admin/import">click here to Import result</a></span> -->
+          <span><a>click here to Import result</a></span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span>
+        </div>
+        <div class="col-lg-6">
+          <input type="file" name="" value="Import results From Here">
         </div>
       </div>
 
@@ -38,8 +41,8 @@
                 <td><%=list[i].marks%></td>
                 <td><%=list[i].per%></td>
                 <td>
-                  <span class="glyphicon glyphicon-edit pointer"></span>
-                  <span class="glyphicon glyphicon-trash pointer"></span>
+                  <a href="/addnew:id"><span class='glyphicon glyphicon-edit pointer'></span></a>
+                  <span class="glyphicon glyphicon-trash pointer"><a href="/addnew"></a></span>
                 </td>
               </tr>
             <%}%>
