@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use("/admin",adminRouter);
 
 app.get("/", function(req, res) {
-  res.render("index");
+  res.render("pages/index");
 });
 
 app.listen(PORT, function(err) {
