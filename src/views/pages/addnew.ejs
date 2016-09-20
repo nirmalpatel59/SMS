@@ -11,26 +11,34 @@
   </head>
   <body>
     <% include ../partials/header %>
-    <div class="container Premrg20">
+    <form id="formid" action="/admin/addNew" method="post">
+      <div class="container Premrg20">
+        <div class="row Premrg10">
+          <input type="hidden" name="doctype" value="student">
+          <%if(list) {%>
+            <input type="hidden" name="_id" value="<%=list._id%>">
+            <input type="hidden" name="_rev" value="<%=list._rev%>">
+          <%}%>
 
-      <div class="row Premrg10">
-        <div class="col-lg-3">Student Name</div>
-        <div class="col-lg-3"><input type="text" class="form-control" name="sname"></div>
-        <div class="col-lg-3">Seat No.</div>
-        <div class="col-lg-3"><input type="text" class="form-control" name="sno"></div>
-      </div>
-      <div class="row Premrg10">
-        <div class="col-lg-3">Marks Obtained</div>
-        <div class="col-lg-3"><input type="text" class="form-control" name="smarks"></div>
-        <div class="col-lg-3">Percentile</div>
-        <div class="col-lg-3"><input type="text" class="form-control" name="spercentile"></div>  
-      </div>
-      <div class="row Premrg10">
-        <div class="col-lg-12 text-center">
-          <button class="btn btn-success" id="save_new_record">Save</button>
+          <div class="col-lg-3">Student Name</div>
+            <div class="col-lg-3"><input type="text" class="form-control" value="<%if(list){%><%=list.sname%><%}%>" name="sname"></div>
+          <div class="col-lg-3">Seat No.</div>
+          <div class="col-lg-3"><input type="text" class="form-control" value="<%if(list){%><%=list.sno%><%}%>" name="sno"></div>
+        </div>
+        <div class="row Premrg10">
+          <div class="col-lg-3">Marks Obtained</div>
+          <div class="col-lg-3"><input type="text" class="form-control" name="smarks" value="<%if(list){%><%=list.smarks%><%}%>"></div>
+          <div class="col-lg-3">Percentile</div>
+          <div class="col-lg-3"><input type="text" class="form-control" name="spercentile" value="<%if(list){%><%=list.spercentile%><%}%>"></div>  
+        </div>
+        <div class="row Premrg10">
+          <div class="col-lg-12 text-center">
+            <input type="submit" value="Save">
+            <!-- <button class="btn btn-success" id="save_new_record">Save</button> -->
+          </div>
         </div>
       </div>
-    </div>
+    </form>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>

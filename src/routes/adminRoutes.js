@@ -3,7 +3,7 @@ var adminRouter = express.Router();
 var list = [
         { id:1,
           name: "nirmal",
-          sid: "Ab123456",
+          sid: "AB110011",
           marks: "90",
           per: "98" 
         },
@@ -26,15 +26,13 @@ var list = [
           per: "68" 
         }
       ];
+var adminController = require("../controller/adminController")(list); 
 adminRouter.route("/")
-  .get(function(req,res) {
-    res.render("pages/admin",{
-      list: list
-    });
-  });
+  .get(adminController.getList);
 adminRouter.route("/addnew")
-  .get(function(req,res) {
-    res.render("pages/addnew");
-  });
+  .get(adminController.addNew)
+  .post(adminController.insertNew);
+adminRouter.route("/edit/:id")
+  .get(adminController.editList);
 
 module.exports = adminRouter;

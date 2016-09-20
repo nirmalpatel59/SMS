@@ -36,13 +36,13 @@
           <tbody>
             <% for(var i=0; i<list.length; i++){%>
               <tr>
-                <td><%=list[i].name%></td>
-                <td><%=list[i].sid%></td>
-                <td><%=list[i].marks%></td>
-                <td><%=list[i].per%></td>
+                <td><%=list[i].value.sname%></td>
+                <td><%=list[i].value.sno%></td>
+                <td><%=list[i].value.smarks%></td>
+                <td><%=list[i].value.spercentile%></td>
                 <td>
-                  <a href="/addnew:id"><span class='glyphicon glyphicon-edit pointer'></span></a>
-                  <span class="glyphicon glyphicon-trash pointer"><a href="/addnew"></a></span>
+                  <a href="/admin/edit/<%=list[i].value._id%>"><span class='glyphicon glyphicon-edit pointer'></span></a>
+                  <a href="/admin/edit/<%=list[i].value._id%>"><span class="glyphicon glyphicon-trash pointer"></span></a>
                 </td>
               </tr>
             <%}%>
