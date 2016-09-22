@@ -45,17 +45,41 @@
   </div>  
 
   <div class="container">
-    <div class="row mrgtop">
-      <div class="col-lg-2"><span>Enter Your Seat No</span></div>
-      <div class="col-lg-4"><input type="text" class="form-control" id="seat_no"></div>
-    </div>
-    <div class="row mrgtop">
-      <div class="col-lg-2"><span>Enter Your BirthDate</span></div>
-      <div class="col-lg-4"><input type="text" class="form-control" id="birthdate"></div>
-    </div>
-    <div class="row mrgtop">
-      <div class="col-lg-2 text-center"></div>
-      <div class="col-lg-4 text-center"><button id="Submit">Submit</button></div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row mrgtop">
+          <div class="col-lg-4"><span>Enter Your Seat No</span></div>
+          <div class="col-lg-8"><input type="text" class="form-control" id="seat_no"></div>        
+        </div>
+        <div class="row mrgtop">
+          <div class="col-lg-4"><span>Enter Your BirthDate</span></div>
+          <div class="col-lg-8"><input type="text" class="form-control" id="birthdate"></div>
+        </div>
+        <div class="row mrgtop">
+          <div class="col-lg-4 text-center"></div>
+          <div class="col-lg-8 text-center"><button id="Submit">Submit</button></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <form action="/login" method="post">
+          <div class="row mrgtop">
+            <div class="col-lg-12"><span>Admin Login</span></div>
+          </div>
+          <div class="row mrgtop">
+            <div class="col-lg-4"><span>Email Id</span></div>
+            <div class="col-lg-8"><input type="text" class="form-control" name="username"></div>
+          </div>
+          <div class="row mrgtop">
+            <div class="col-lg-4"><span>Password</span></div>
+            <div class="col-lg-8"><input type="text" class="form-control" name="password"></div>
+          </div>
+          <div class="row mrgtop">
+            <div class="col-lg-4 text-center"></div>
+            <div class="col-lg-8 text-center"><button id="Submit">Submit</button></div>
+          </div>        
+        </form>
+      </div>
     </div>
   </div>
 </body>

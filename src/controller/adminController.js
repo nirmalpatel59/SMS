@@ -42,6 +42,6 @@ var adminController = function(list) {
     addNew:addNew,
     editList:editList,
     insertNew:insertNew
-  }
-}
+  };
+};
 module.exports = adminController;
