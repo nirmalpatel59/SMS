@@ -3,17 +3,47 @@
 <head>
   <title>School Management System</title>
   <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/marquee.css" rel="stylesheet">
   <!--bower:js-->
   <script src="/lib/jquery/dist/jquery.js"></script>
   <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/lib/marquee.js"></script>
   <!-- endbower -->
   <style type="text/css">
   .mrgtop{
     margin-top:10px;
   }
   </style>
+  <script type="text/javascript">
+    $(function(){
+      $('.simple-marquee-container').SimpleMarquee({
+        duration:41000,
+        hover:true
+      });
+      $(".marquee-1").trigger('mouseenter');
+      $(".marquee-1").trigger('mouseleave');
+
+    });
+  </script>
 </head>
 <body>
+  <% include ../partials/header %>
+  <div class="content">
+    <div class="simple-marquee-container">
+      <div class="marquee-sibling"> Latest Updates </div>
+      <div class="marquee">
+        <ul class="marquee-content-items">
+          <li>11th Std Physics Mock Test - 09/09/2016</li>
+          <li>12th Std Maths Mock Test - 11/09/2016</li>
+          <li>12th Std Biology Mock Test - 11/09/2016</li>
+          <li>10th Std Maths Mock Test - 09/09/2016</li>
+          <li>11th Std Chemistry Mock Test - 12/09/2016</li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+
   <div class="container">
     <div class="row mrgtop">
       <div class="col-lg-2"><span>Enter Your Seat No</span></div>
