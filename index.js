@@ -42,10 +42,14 @@ passport.deserializeUser(function(id, cb) {
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/admin",adminRouter);
+app.use("/admin",
+  require('connect-ensure-login').ensureLoggedIn(),adminRouter);
 
 app.get("/", function(req, res) {
   res.render("pages/index");
+});
+app.get("/login", function(req, res) {
+  res.redirect("/");
 });
 
 app.post("/login",passport.authenticate('local', {failureRedirect:"/admin/import"}), function(req, res) {
