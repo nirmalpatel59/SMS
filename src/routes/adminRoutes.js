@@ -34,5 +34,10 @@ adminRouter.route("/addnew")
   .post(adminController.insertNew);
 adminRouter.route("/edit/:id")
   .get(adminController.editList);
+adminRouter.route("/import")
+  .get(function(req, res) {
+    console.log(req.user);
+    res.json(req.user);
+  });
 
 module.exports = adminRouter;
