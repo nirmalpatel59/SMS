@@ -27,6 +27,12 @@ var list = [
         }
       ];
 var adminController = require("../controller/adminController")(list); 
+adminRouter.use(function(req,res,next) {
+  if(!req.user) {
+    res.redirect("/")
+  }
+  next();
+});
 adminRouter.route("/")
   .get(adminController.getList);
 adminRouter.route("/addnew")
