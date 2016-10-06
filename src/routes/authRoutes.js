@@ -1,8 +1,12 @@
 var express    = require("express");
 var authRouter = express.Router();
-var nano       = require('nano')('http://nirmal:nirmal@localhost:5984');
-var db         = nano.db.use("sms-admin");
 var passport = require("passport");
+var nconf = require('nconf');
+nconf.argv().env().file({ file: 'config.json' });
+var database = nconf.get("DB"),
+    source_uname = nconf.get("DB_USERNAME"),
+    source_upass = nconf.get("DB_PASSWORD"),
+    db_url       = nconf.get("COUCH_URL");
 
 authRouter.route("/login")
 .post(passport.authenticate('local', {

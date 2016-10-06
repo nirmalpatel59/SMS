@@ -1,0 +1,6 @@
+{
+	"COUCH_URL":    "192.168.0.66:5984",
+	"DB_USERNAME": "nirmal",
+	"DB_PASSWORD": "nirmal",
+	"DB":          "sms-admin"
+}

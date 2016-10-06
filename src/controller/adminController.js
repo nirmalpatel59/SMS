@@ -1,16 +1,20 @@
-var nano = require('nano')('http://nirmal:nirmal@localhost:5984');
-var db   = nano.db.use("sms-admin");
+var nconf = require('nconf');
+nconf.argv().env().file({ file: 'config.json' });
+var database       = nconf.get("DB"),
+    source_uname = nconf.get("DB_USERNAME"),
+    source_upass = nconf.get("DB_PASSWORD"),
+    db_url       = nconf.get("COUCH_URL");
+var nano  = require('nano')('http://'+source_uname+':'+source_upass+'@'+db_url);
+var db    = nano.db.use(database);
 
-var adminController = function(list) {
+var adminController = function() {
   var getList = function(req,res) {
     db.view('sms','getAllStudents',function(err, body) {
       if (!err) {
-        console.log(body);
         res.render("pages/admin",{
           list: body.rows
         });
-      }else {
-
+         return;
       }
     });
   };
@@ -20,7 +24,6 @@ var adminController = function(list) {
     });
   };
   var insertNew = function(req,res) {
-    console.log(req.body);
     db.insert(req.body, function(err, body) {
       if (!err) {
         res.redirect("/admin");
@@ -29,7 +32,6 @@ var adminController = function(list) {
   };
   var editList = function(req,res) {
     var docid = req.params.id;
-    console.log(docid);
     db.get(docid, function(err, body) {
       if (!err)
         res.render("pages/addnew",{
