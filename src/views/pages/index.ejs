@@ -11,8 +11,22 @@
   <script src="/lib/marquee.js"></script>
   <!-- endbower -->
   <style type="text/css">
-  .mrgtop{
+  .mrgtop {
     margin-top:10px;
+  }
+  .mrgbtm {
+    margin-bottom:10px;
+  }
+  .admin-login {
+    border: 10px solid;
+    border-radius: 4px;
+    box-shadow: 10px 10px 5px rgb(136, 136, 136);
+  }
+  .admin-lbl {
+    padding: 10px; background-color: rgb(34, 34, 34);
+  }
+  .admin-lbl-color {
+    color: rgb(157, 157, 157);
   }
   </style>
   <script type="text/javascript">
@@ -45,8 +59,8 @@
   </div>  
 
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="row mrgtop">
+      <div class="col-lg-7 admin-login" >
         <div class="row mrgtop">
           <div class="col-lg-4"><span>Enter Your Seat No</span></div>
           <div class="col-lg-8"><input type="text" class="form-control" id="seat_no"></div>        
@@ -56,27 +70,25 @@
           <div class="col-lg-8"><input type="text" class="form-control" id="birthdate"></div>
         </div>
         <div class="row mrgtop">
-          <div class="col-lg-4 text-center"></div>
-          <div class="col-lg-8 text-center"><button id="Submit">Submit</button></div>
+          <div class="col-lg-12 text-center"><button class="btn btn-primary" id="Submit">Submit</button></div>
         </div>
       </div>
-
-      <div class="col-lg-6">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-4 admin-login">
         <form action="/auth/login" name="loginForm" method="post">
-          <div class="row mrgtop">
-            <div class="col-lg-12"><span>Admin Login</span></div>
+          <div class="row">
+            <div class="col-lg-12 text-center admin-lbl"><span class="admin-lbl-color">Admin Login</span></div>
           </div>
           <div class="row mrgtop">
-            <div class="col-lg-4"><span>Email Id</span></div>
+            <div class="col-lg-4"><span>Username</span></div>
             <div class="col-lg-8"><input type="text" class="form-control" name="username"></div>
           </div>
           <div class="row mrgtop">
             <div class="col-lg-4"><span>Password</span></div>
             <div class="col-lg-8"><input type="text" class="form-control" name="password"></div>
           </div>
-          <div class="row mrgtop">
-            <div class="col-lg-4 text-center"></div>
-            <div class="col-lg-8 text-center"><button id="Submit">Submit</button></div>
+          <div class="row mrgtop mrgbtm">
+            <div class="col-lg-12 text-center"><button class="btn btn-primary" id="Submit">Login</button></div>
           </div>        
         </form>
       </div>
