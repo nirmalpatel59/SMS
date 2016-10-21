@@ -30,15 +30,23 @@ app.set("views",'./src/views');
 app.set("view engine", "ejs");
 
 app.use(function(req, res, next) {
-  if (!req.user)
+  if (!req.user) {
     res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+  }
   next();
 });
+
 app.use("/admin",adminRouter);
 app.use("/auth",authRouter);
 
 app.get("/", function(req, res) {
-  res.render("pages/index");
+	if(req.user) {
+		res.redirect("/admin");
+	}else {
+		res.render("pages/index");	
+	}
 });
 
 app.listen(PORT, "192.168.0.66", function(err) {

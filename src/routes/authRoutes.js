@@ -14,7 +14,7 @@ authRouter.route("/logout")
 .get(function(req, res) {
 	req.session.destroy();
 	req.logout();
-  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  // res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.redirect("/");
 });
 
