@@ -29,6 +29,11 @@ require("./src/config/passport")(app);
 app.set("views",'./src/views');
 app.set("view engine", "ejs");
 
+app.use(function(req, res, next) {
+  if (!req.user)
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  next();
+});
 app.use("/admin",adminRouter);
 app.use("/auth",authRouter);
 

@@ -10,9 +10,11 @@ var db    = nano.db.use(database);
 var adminController = function() {
   var getList = function(req,res) {
     db.view('sms','getAllStudents',function(err, body) {
+      console.log(req.user);
       if (!err) {
         res.render("pages/admin",{
-          list: body.rows
+          list: body.rows,
+          user:req.user
         });
         return;
       }else {
