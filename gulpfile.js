@@ -10,7 +10,7 @@ gulp.task("inject",function() {
   };
   return gulp.src("./src/views/*.html")
     .pipe(wiredep(options))
-    .pipe(gulp.dest("./src/views"))
+    .pipe(gulp.dest("./src/views"));
 });
 
 gulp.task("serve",function(){
@@ -21,11 +21,11 @@ gulp.task("serve",function(){
       "PORT": 5000
     },
     ext: 'js html css ejs'
-  }
+  };
   return nodemon(options)
     .on('restart',function(ev){
-      console.log("restartihng the server....")      
-    })
+      console.log("restartihng the server....")  ;    
+    });
 });
 
 gulp.task("default",["serve","inject"], function() {

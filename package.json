@@ -21,6 +21,7 @@
     "body-parser": "^1.15.2",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "cradle": "^0.7.1",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
@@ -29,6 +30,7 @@
     "nconf": "^0.8.4",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "sessionstore": "^1.2.16",
     "xlsx": "^0.8.0"
   },
   "devDependencies": {

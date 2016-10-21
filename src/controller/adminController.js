@@ -14,7 +14,9 @@ var adminController = function() {
         res.render("pages/admin",{
           list: body.rows
         });
-         return;
+        return;
+      }else {
+        console.log("in else");
       }
     });
   };

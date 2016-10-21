@@ -1,3 +1,4 @@
+var sessionstore = require('sessionstore');
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -14,7 +15,16 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(session({ secret: 'library',}));
+// app.use(session({ secret: 'library',}));
+app.use(session({
+	secret:"library",
+  store: sessionstore.createSessionStore({
+    type: 'couchdb',
+    host: 'http://192.168.0.66',  // optional
+    port: 5984,                // optional
+    dbName: 'sessions'
+  })	
+}));
 require("./src/config/passport")(app);
 app.set("views",'./src/views');
 app.set("view engine", "ejs");
@@ -26,6 +36,6 @@ app.get("/", function(req, res) {
   res.render("pages/index");
 });
 
-app.listen(PORT, function(err) {
+app.listen(PORT, "192.168.0.66", function(err) {
   console.log("server is running on :: " + PORT);
 });
